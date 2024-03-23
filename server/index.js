@@ -6,7 +6,7 @@ require("dotenv").config();
 
 const mainRouter = require("./routes/main.routes");
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3002;
 
 app.use(express.json());
 app.use(cookieParser());

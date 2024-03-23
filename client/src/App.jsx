@@ -9,6 +9,9 @@ import Signup from "../pages/Signup";
 import Signin from "../pages/Signin";
 import MySpace from "../pages/MySpace";
 import DashBoard from "../pages/DashBoard";
+import MainLeft from "../components/MainLeft";
+import EventBoard from "../pages/EventBoard";
+import Tickets from "../pages/Tickets";
 
 function App() {
   const { authUser } = useAuthContext();
@@ -34,7 +37,9 @@ function App() {
           path="/signup"
           element={authUser ? <Navigate to="/myspace" /> : <Signup />}
         />
-        <Route path="/dashboard" element={<DashBoard />} />
+        <Route path="/events" element={<EventBoard />} />
+        <Route path="/tickets" element={<Tickets />} />
+        <Route path="/" element={<MainLeft />} />
       </Routes>
       <Toaster />
     </div>

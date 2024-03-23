@@ -11,7 +11,7 @@ const MySpace = () => {
   const signout = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/v1/user/signout"
+        "http://localhost:3002/api/v1/signout"
       );
       localStorage.removeItem("jwt");
       toast.success("Logged out successfully");

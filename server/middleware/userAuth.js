@@ -3,6 +3,7 @@ const userDB = require("../models/accountModel");
 
 const userAuth = async (req, res, next) => {
   try {
+    console.log(req.cookies);
     const token = req.cookies.jwt;
     console.log("Token:", token);
 
@@ -30,7 +31,7 @@ const userAuth = async (req, res, next) => {
         .json({ message: "Unauthorized Access: No User Found" });
     }
 
-    if (user.isUser != true) {
+    if (user.isUser !== true) {
       return res.status(401).json({ message: "Unauthorized Access: No Entry" });
     }
 

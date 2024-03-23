@@ -69,7 +69,7 @@ router.post("/signin", signInMiddleware, async (req, res) => {
       isUser: user.isUser,
     });
   } catch (error) {
-    console.log("Error at SignIN: ", error.message);
+    console.log("Error at Signing: ", error.message);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
@@ -84,7 +84,8 @@ router.post("/signout", (req, res) => {
   }
 });
 
-router.use("/user", userAuth, userRouter);
+router.use("/user", userRouter);
+// router.use("/user", userAuth, userRouter);
 // router.use("/admin", adminAuth, adminRouter);
 
 module.exports = router;

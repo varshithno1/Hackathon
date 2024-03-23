@@ -9,6 +9,8 @@ const generateTokenCookie = (user, res) => {
     }
   );
 
+  console.log(token);
+
   // Set the token as a cookie in the response
   res.cookie("jwt", token, {
     maxAge: 15 * 24 * 60 * 60 * 1000, // milliseconds
@@ -16,6 +18,12 @@ const generateTokenCookie = (user, res) => {
     sameSite: "strict",
     secure: process.env.NODE_ENV === "production" ? true : false,
   });
+
+  res.token = token;
+
+  console.log(res);
+  console.log(res.cookie);
+  console.log(res.cookies);
 
   // Return the response object
   return token;

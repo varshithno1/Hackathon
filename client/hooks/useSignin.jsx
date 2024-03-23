@@ -16,14 +16,14 @@ const useSignin = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post(
-        "http://localhost:3002/api/v1/signin",
-        {
-          email,
-          password,
-        }
-      );
+      const response = await axios.post("http://localhost:3002/api/v1/signin", {
+        email,
+        password,
+      });
       localStorage.setItem("jwt", response.data.jwt);
+      document.cookie = `jwt=${response.data.jwt}; max-age=${
+        15 * 24 * 60 * 60
+      }; path=/;`;
       setAuthUser(response.data.jwt);
       toast.success(response.data.msg);
       navigate("/myspace");

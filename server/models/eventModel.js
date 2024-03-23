@@ -11,9 +11,10 @@ const EventSchema = new mongoose.Schema({
   },
   venue: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "venue",
+    ref: "venues",
     required: true,
   },
+
   fromTime: {
     type: Date,
     default: Date.now,

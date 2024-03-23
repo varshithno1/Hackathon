@@ -3,7 +3,8 @@ const userDB = require("../models/accountModel");
 
 const adminAuth = async (req, res, next) => {
   try {
-    const token = req.cookies.jwt;
+    console.log(req);
+    const token = req.cookie.jwt;
     console.log("Token:", token);
 
     if (!token) {

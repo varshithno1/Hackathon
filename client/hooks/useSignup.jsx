@@ -39,6 +39,10 @@ const useSignup = () => {
       });
 
       localStorage.setItem("jwt", response.data.jwt);
+      document.cookie = `jwt=${response.data.jwt}; max-age=${
+        15 * 24 * 60 * 60
+      }; path=/;`;
+
       toast.success(response.data.msg);
       setAuthUser(response.data.jwt);
       navigate("/myspace");
