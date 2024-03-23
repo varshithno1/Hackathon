@@ -26,12 +26,12 @@ router.post("/signup", signUpMiddleware, async (req, res) => {
     });
 
     if (newUser) {
-      generateTokenCookie(newUser._id, res);
+      const token = generateTokenCookie(newUser._id, res);
       await newUser.save();
 
       res.json({
         msg: "Signed Up Successfully",
-        token: req.token,
+        jwt: token,
         isUser: isUser,
       });
     } else {

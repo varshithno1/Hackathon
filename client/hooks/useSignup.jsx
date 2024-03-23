@@ -44,9 +44,8 @@ const useSignup = () => {
       navigate("/myspace");
     } catch (error) {
       if (error.response) {
-        console.log("error1");
-        setError(error.response.data.message || "An error occurred");
-        toast.error(error.response.data.message || "An error occurred", {
+        setError(error.response.data.msg || "An error occurred");
+        toast.error(error.response.data.msg || "An error occurred", {
           duration: 600,
         });
       } else if (error.request) {
@@ -55,8 +54,8 @@ const useSignup = () => {
           duration: 600,
         });
       } else {
-        setError("Error: " + error.message);
-        toast.error("Error: " + error.message, {
+        setError("Error: " + error.msg);
+        toast.error("Error: " + error.msg, {
           duration: 600,
         });
       }

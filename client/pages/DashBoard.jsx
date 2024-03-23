@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import "./styles.css";
 
 const DashBoard = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,7 +52,9 @@ const DashBoard = () => {
           <div className="container">
             <div className="row">
               <div className="col-md-12">
-                <div className="card"></div>
+                <div className="card">
+                  {/* Your form and summernote integration here */}
+                </div>
               </div>
             </div>
           </div>

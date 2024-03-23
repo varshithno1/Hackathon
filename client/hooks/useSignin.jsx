@@ -17,7 +17,7 @@ const useSignin = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3002/api/v1/user/signin",
+        "http://localhost:3002/api/v1/signin",
         {
           email,
           password,
